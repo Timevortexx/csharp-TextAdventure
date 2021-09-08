@@ -6,6 +6,7 @@ namespace TextAdventurec
 {
     class world
     {
-        public room[,] rooms = new room[10,10];
+        public room[,] rooms = new room[10, 10];
+
     }
 }
