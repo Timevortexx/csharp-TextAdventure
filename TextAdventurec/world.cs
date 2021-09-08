@@ -4,13 +4,8 @@ using System.Text;
 
 namespace TextAdventurec
 {
-    public class item
+    class world
     {
-        public string name;
-        public string description;
-        public int id;
-
-
-
+        public room[,] rooms = new room[10,10];
     }
 }
