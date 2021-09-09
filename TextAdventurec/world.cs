@@ -28,9 +28,16 @@ namespace TextAdventurec
             rooms[4, 4].description = "A small cave. A dying campfire illuminates the place dimly. You can just about make out an exit in the north.";
             rooms[4, 4].roomitems.Add(Program.playerr.inv.getFromID(2));
             rooms[4, 4].northexit = true;
-            rooms[4, 4].northdesc = "You stumble towards the small exit, a horrible stench fills your nose as you get closer. As you exit the small cave room you find yourself in a room with hundereds of corpses. There is an exit to the east, west and south";
-            
-        
+            rooms[4, 4].northdesc = "You stumble towards the small exit, a horrible stench fills your nose as you get closer.";
+            rooms[4, 3].description = "You find yourself in a room with corpses. It smells horrible.";
+            rooms[4, 3].eastexit = true;
+            rooms[4, 3].eastdesc = "As you exit to the east it becomes brighter an brighter. You can hear a waterfall nearby";
+            rooms[4, 3].southexit = true;
+            rooms[4, 3].southdesc = "You go back to your starting room";
+            rooms[4, 3].westexit = true;
+            rooms[4, 3].westdesc = "As you exit to the west, with each step it gets hotter and hotter";
+
+
         }
 
     }

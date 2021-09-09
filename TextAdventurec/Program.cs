@@ -11,6 +11,8 @@ namespace TextAdventurec
         static void Main(string[] args)
         {
             //Testing Inventory functionality
+            Console.WriteLine("Testing music");
+            musicManager.checkMusic();
             Console.WriteLine("Testing inventory");
             playerr.inv.add(playerr.inv.getFromID(0));
             Console.WriteLine(playerr.inv.items[0].name);
@@ -33,6 +35,13 @@ namespace TextAdventurec
             Console.WriteLine(gameWorld.rooms[4,4].description);
             Console.WriteLine("What do you want to do:");
             InputParser.parse(Console.ReadLine());
+            Console.WriteLine("Well now youre on your own");
+            while (true)
+            {
+                Console.WriteLine(gameWorld.rooms[posx,posy].description);
+                Console.WriteLine("What do you want to do:");
+                InputParser.parse(Console.ReadLine());
+            }
         }
     }
 }
