@@ -5,6 +5,9 @@ namespace TextAdventurec
     class Program
     {
         public static player playerr = new player();
+        public static world gameWorld = new world();
+        public static int posx, posy;
+       
         static void Main(string[] args)
         {
             //Testing Inventory functionality
@@ -24,6 +27,12 @@ namespace TextAdventurec
             playerr.spells[0].cast(playerr);
             Console.WriteLine("Player health: " + playerr.health);
             Console.WriteLine("Player mana: " + playerr.mana);
+            Console.WriteLine("Testing za warudo");
+            playerr.currentRoom = gameWorld.rooms[4, 4];
+            posx = 4; posy = 4;
+            Console.WriteLine(gameWorld.rooms[4,4].description);
+            Console.WriteLine("What do you want to do:");
+            InputParser.parse(Console.ReadLine());
         }
     }
 }

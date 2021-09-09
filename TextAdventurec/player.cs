@@ -9,6 +9,7 @@ namespace TextAdventurec
     {
         
         public inventory inv = new inventory();
+        public room currentRoom;
 
         public player() {
             name = "player";
