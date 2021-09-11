@@ -10,6 +10,7 @@ namespace TextAdventurec
         
         public inventory inv = new inventory();
         public room currentRoom;
+        public room prevRoom;
 
         public player() {
             name = "player";

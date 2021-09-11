@@ -32,7 +32,9 @@ namespace TextAdventurec
 
         private static void pos()
         {
-            Console.WriteLine(Program.posx + " : " + Program.posy);
+            DrawWindowTop();
+            Console.WriteLine(Program.posx +  " : " + Program.posy);
+            DrawWindow();
         }
 
         public static void walk(string[] sinputs) {
@@ -43,52 +45,73 @@ namespace TextAdventurec
                     case ("north"):
                         if (Program.playerr.currentRoom.northexit)
                         {
+                            DrawWindowTop();
                             Console.WriteLine(Program.playerr.currentRoom.northdesc);
                             Program.playerr.currentRoom = Program.gameWorld.rooms[Program.posx, Program.posy - 1];
                             Program.posy--;
+                            
                             play_music(Program.playerr.currentRoom.track);
+                            DrawWindow();
 
                         }
                         else{
+                            DrawWindowTop();
                             Console.WriteLine("There is no exit in that direction");
+                            DrawWindow();
                         }
                         break;
                     case ("east"):
                         if (Program.playerr.currentRoom.eastexit)
                         {
+                            DrawWindowTop();
                             Console.WriteLine(Program.playerr.currentRoom.eastdesc);
                             Program.playerr.currentRoom = Program.gameWorld.rooms[Program.posx +1, Program.posy];
                             Program.posx++;
+                            
                             play_music(Program.playerr.currentRoom.track);
+                            DrawWindow();
 
                         }
                         else{
+                            DrawWindowTop();
                             Console.WriteLine("There is no exit in that direction");
+                            DrawWindow();
                         }
                         break;
                     case ("south"):
                         if (Program.playerr.currentRoom.southexit)
                         {
+                            DrawWindowTop();
                             Console.WriteLine(Program.playerr.currentRoom.southdesc);
                             Program.playerr.currentRoom = Program.gameWorld.rooms[Program.posx, Program.posy+1];
                             Program.posy++;
+                            
                             play_music(Program.playerr.currentRoom.track);
+                            DrawWindow();
 
                         }
                         else{
+                            DrawWindowTop();
                             Console.WriteLine("There is no exit in that direction");
+                            DrawWindow();
                         }
                         break;
                     case ("west"):
                         if (Program.playerr.currentRoom.westexit)
                         {
+                            DrawWindowTop();
                             Console.WriteLine(Program.playerr.currentRoom.westdesc);
                             Program.playerr.currentRoom = Program.gameWorld.rooms[Program.posx-1, Program.posy];
                             Program.posx--;
                             play_music(Program.playerr.currentRoom.track);
-                            
-                        }else{
+                            DrawWindow();
+
+
+                        }
+                        else{
+                            DrawWindowTop();
                             Console.WriteLine("There is no exit in that direction");
+                            DrawWindow();
                         }
                         break;
                     default:
@@ -103,7 +126,21 @@ namespace TextAdventurec
             musicManager.checkMusic(track);
             }
         }
+
+        public static void DrawWindow() {
+
+            Console.WriteLine(Program.gameWorld.rooms[Program.posx, Program.posy].description);
             
+            Console.WriteLine("What do you want to do:");
+        }
+        public static void DrawWindowTop()
+        {
+            Console.Clear();
+
+            Console.SetCursorPosition(0, 22);
+            Console.WriteLine("_____________________________________________________________");
+        }
+
 
     }
 }
