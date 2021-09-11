@@ -11,6 +11,8 @@ namespace TextAdventurec
         public bool northexit, southexit, westexit, eastexit;
         public string northdesc, southdesc, westdesc, eastdesc;
         public string description;
+        public bool music;
+        public string track;
 
 
 

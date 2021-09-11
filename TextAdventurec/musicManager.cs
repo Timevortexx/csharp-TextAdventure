@@ -11,16 +11,16 @@ namespace TextAdventurec
 {
     class musicManager
     {
-        
 
-        public static void checkMusic()
+
+        public static void checkMusic(string track)
         {
-            string fileName = "waterfall.wav";
+            string fileName = track + ".wav";
             string path = Path.Combine(Environment.CurrentDirectory, @"music\", fileName);
-            Console.WriteLine(path);
+            //Console.WriteLine(path);
             SoundPlayer player = new SoundPlayer(path);
             player.Play();
-            
+
 
         }
     }

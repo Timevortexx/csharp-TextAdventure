@@ -1,4 +1,6 @@
-﻿using System;
+﻿
+
+using System;
 
 namespace TextAdventurec
 {
@@ -7,12 +9,12 @@ namespace TextAdventurec
         public static player playerr = new player();
         public static world gameWorld = new world();
         public static int posx, posy;
-       
+
         static void Main(string[] args)
         {
             //Testing Inventory functionality
             Console.WriteLine("Testing music");
-            musicManager.checkMusic();
+            //musicManager.checkMusic("waterfall");
             Console.WriteLine("Testing inventory");
             playerr.inv.add(playerr.inv.getFromID(0));
             Console.WriteLine(playerr.inv.items[0].name);
@@ -32,13 +34,14 @@ namespace TextAdventurec
             Console.WriteLine("Testing za warudo");
             playerr.currentRoom = gameWorld.rooms[4, 4];
             posx = 4; posy = 4;
-            Console.WriteLine(gameWorld.rooms[4,4].description);
+            Console.WriteLine(gameWorld.rooms[4, 4].description);
             Console.WriteLine("What do you want to do:");
             InputParser.parse(Console.ReadLine());
             Console.WriteLine("Well now youre on your own");
             while (true)
             {
-                Console.WriteLine(gameWorld.rooms[posx,posy].description);
+                Console.WriteLine(gameWorld.rooms[posx, posy].description);
+
                 Console.WriteLine("What do you want to do:");
                 InputParser.parse(Console.ReadLine());
             }
