@@ -19,6 +19,9 @@ namespace TextAdventurec
                     case ("move"):
                         walk(sinputs);
                         break;
+                    case ("look"):
+                        look();
+                        break;
                     case ("pos"):
                         pos();
                         break;
@@ -27,6 +30,19 @@ namespace TextAdventurec
                         continue;
                 }
                 break;
+            }
+        }
+
+        private static void look()
+        {
+            if (Program.playerr.litup) {
+                DrawWindowTop();
+                Console.WriteLine("You look around the room, illuminating the surroundings\nwith your " + Program.playerr.lightitem.name + "! You see:");
+                foreach (var item in Program.playerr.currentRoom.roomitems)
+                {
+                    Console.WriteLine(item.name);
+                }
+                DrawWindow();
             }
         }
 

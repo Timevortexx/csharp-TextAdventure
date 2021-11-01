@@ -54,7 +54,7 @@ namespace TextAdventurec
                             location.Y * fontSize.Height,
                             imageSize.Width * fontSize.Width,
                             imageSize.Height * fontSize.Height);
-                        g2.DrawImage(image, imageRect);
+                        //g2.DrawImage(image, imageRect);
 
                     }
                 }

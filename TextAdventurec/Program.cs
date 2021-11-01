@@ -14,6 +14,8 @@ namespace TextAdventurec
         {
             Console.SetWindowSize(62, 32);
             playerr.currentRoom = gameWorld.rooms[4, 4];
+            playerr.lightitem = playerr.inv.getFromID(2);
+            playerr.litup = true;
             posx = 4; posy = 4;
             InputParser.DrawWindowTop();
             if (playerr.currentRoom.music)

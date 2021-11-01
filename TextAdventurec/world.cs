@@ -47,7 +47,7 @@ namespace TextAdventurec
             rooms[5, 3].music = true;
             rooms[5, 3].track = "waterfall";
             rooms[5, 3].eastdesc = "You notice the entrance to an underwater cave. You decide to jump in the water and follow the narrow passage way. Soon the roof stretches above the waterline and you emerge from the water.";
-
+            rooms[4, 3].roomitems.Add(Program.playerr.inv.getFromID(0));
 
         }
 
