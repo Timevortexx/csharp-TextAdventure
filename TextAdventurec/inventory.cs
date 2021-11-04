@@ -4,7 +4,7 @@ using System.Text;
 
 namespace TextAdventurec
 {
-    class inventory
+    public class inventory
     {
 
         public List<item> items = new List<item>();

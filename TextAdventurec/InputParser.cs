@@ -20,16 +20,37 @@ namespace TextAdventurec
                         walk(sinputs);
                         break;
                     case ("look"):
+                    case ("examine"):
                         look();
                         break;
                     case ("pos"):
                         pos();
+                        break;
+                    case ("take"):
+                    case ("grab"):
+                        grab(sinputs);
                         break;
                     default:
                         Console.WriteLine("Input could not be recognized");
                         continue;
                 }
                 break;
+            }
+        }
+
+        public static void grab(string[] sinputs)
+        {
+            foreach (var sinput in sinputs)
+            {
+                DrawWindowTop();
+                if (Array.IndexOf(Program.playerr.inv.idd.names, sinput) >= 0)
+                {
+                    
+                    Program.playerr.inv.add(Program.playerr.inv.getFromID(Array.IndexOf(Program.playerr.inv.idd.names, sinput)));
+                    Console.WriteLine("You picked up " + sinput);
+                    Program.playerr.currentRoom.roomitems.Remove(Program.playerr.inv.getFromID(Array.IndexOf(Program.playerr.inv.idd.names, sinput)));
+                }
+                DrawWindow();
             }
         }
 

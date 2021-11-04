@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System;
+using TextAdventurec;
 
 namespace TextAdventurec
 {
@@ -8,5 +10,6 @@ namespace TextAdventurec
         public string name;
         public int lvl, xp;
         public List<spell> spells = new List<spell>();
+        public inventory inv = new inventory();
     }
 }
